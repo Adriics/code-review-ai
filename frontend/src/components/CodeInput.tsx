@@ -5,7 +5,7 @@ export default function CodeInput() {
     <TextareaAutosize
       aria-label="minimum height"
       minRows={20}
-      placeholder="Minimum 3 rows"
+      placeholder="Paste your code"
       style={{ width: 500 }}
     />
   )
