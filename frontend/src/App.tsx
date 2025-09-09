@@ -1,14 +1,8 @@
 import "./App.css"
-import ButtonSend from "./components/Button"
-import CodeInput from "./components/CodeInput"
+import { Home } from "./pages/Home"
 
 function App() {
-  return (
-    <>
-      <CodeInput />
-      <ButtonSend />
-    </>
-  )
+  return <Home />
 }
 
 export default App

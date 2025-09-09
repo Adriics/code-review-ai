@@ -1,5 +1,13 @@
 import Button from "@mui/material/Button"
 
-export default function ButtonSend() {
-  return <Button variant="contained">Send</Button>
+interface ButtonSendProps {
+  isEnabled: boolean
+}
+
+export default function ButtonSend(props: ButtonSendProps) {
+  return (
+    <Button variant="contained" disabled={props.isEnabled}>
+      Send
+    </Button>
+  )
 }
