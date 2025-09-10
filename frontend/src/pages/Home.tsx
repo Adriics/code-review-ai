@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import ButtonSend from "../components/Button"
 import CodeInput from "../components/CodeInput"
 
@@ -8,7 +8,12 @@ export function Home() {
 
   return (
     <>
-      <CodeInput value={code} onChange={() => setCode(code)} />
+      <CodeInput
+        value={code}
+        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+          setCode(e.target.value)
+        }
+      />
       {code && setIsEnabled}
       <ButtonSend isEnabled={isEnabled} />
     </>

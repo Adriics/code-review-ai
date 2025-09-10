@@ -2,7 +2,7 @@ import TextareaAutosize from "@mui/material/TextareaAutosize"
 
 interface CodeInputProps {
   value: string
-  onChange: () => void
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 export default function CodeInput(props: CodeInputProps) {
