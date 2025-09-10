@@ -5,9 +5,9 @@ interface ButtonSendProps {
   onClick: () => void
 }
 
-export default function ButtonSend({ isEnabled }: ButtonSendProps) {
+export default function ButtonSend({ isEnabled, onClick }: ButtonSendProps) {
   return (
-    <Button variant="contained" disabled={!isEnabled}>
+    <Button onClick={onClick} variant="contained" disabled={!isEnabled}>
       Send
     </Button>
   )

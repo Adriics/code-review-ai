@@ -13,21 +13,26 @@ export function Home() {
     setIsEnabled(code.trim().length > 0)
   }, [code])
 
+  async function callService(code: string) {
+    console.log("Service va a ser llamado")
+    const response = await sendCodeForReview(code)
+    console.log("Service ha sido llamado")
+    setFeedback(response.feedback)
+  }
+
   return (
     <>
-      <CodeInput
-        value={code}
-        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-          setCode(e.target.value)
-        }
-      />
-
-      <ButtonSend
-        onClick={() => sendCodeForReview(code)}
-        isEnabled={isEnabled}
-      />
-
-      <FeedbackSection feedback={feedback} />
+      <h1 className="p-10">CODE AI REVIEWER</h1>
+      <div className="flex w-full gap-8">
+        <CodeInput
+          value={code}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+            setCode(e.target.value)
+          }
+        />
+        <FeedbackSection feedback={feedback} />
+      </div>
+      <ButtonSend onClick={() => callService(code)} isEnabled={isEnabled} />
     </>
   )
 }
