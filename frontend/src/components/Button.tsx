@@ -4,9 +4,9 @@ interface ButtonSendProps {
   isEnabled: boolean
 }
 
-export default function ButtonSend(props: ButtonSendProps) {
+export default function ButtonSend({ isEnabled }: ButtonSendProps) {
   return (
-    <Button variant="contained" disabled={props.isEnabled}>
+    <Button variant="contained" disabled={!isEnabled}>
       Send
     </Button>
   )
