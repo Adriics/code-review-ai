@@ -8,5 +8,7 @@ export async function reviewCodeWithOllama(code: string) {
     input: `Review this code and give me a real and professional feedback: ${code}`,
   })
 
-  return { feedback: "Código recibido correctamente" }
+  const feedback = response.output_text
+
+  return feedback
 }
